@@ -165,3 +165,25 @@ All commands and output from this session will be recorded in container logs, in
 If you don't see a command prompt, try pressing enter.
 Session ended, resume using 'kubectl attach teste -c teste -n default -i -t' command
 pod "teste" deleted from default namespace
+
+
+
+ kubectl scale deployment web-aula5 --replicas=5
+kubectl get pods
+
+kubectl delete pod $(kubectl get pods -o jsonpath='{.items[0].metadata.name}')
+
+kubectl get pods
+deployment.apps/web-aula5 scaled
+NAME                         READY   STATUS    RESTARTS   AGE
+web-aula5-779c6f9566-blzgp   0/1     Pending   0          0s
+web-aula5-779c6f9566-gdg9k   1/1     Running   0          117s
+web-aula5-779c6f9566-hlb7x   1/1     Running   0          117s
+web-aula5-779c6f9566-z6wnl   1/1     Running   0          92s
+pod "web-aula5-779c6f9566-blzgp" deleted from default namespace
+NAME                         READY   STATUS              RESTARTS   AGE
+web-aula5-779c6f9566-gdg9k   1/1     Running             0          118s
+web-aula5-779c6f9566-hlb7x   1/1     Running             0          118s
+web-aula5-779c6f9566-n6kdb   1/1     Running             0          1s
+web-aula5-779c6f9566-nfjqs   0/1     ContainerCreating   0          1s
+web-aula5-779c6f9566-z6wnl   1/1     Running             0          93s
