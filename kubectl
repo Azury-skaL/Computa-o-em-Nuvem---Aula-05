@@ -80,3 +80,13 @@ Events:
   Normal  Pulled     20s   kubelet            spec.containers{nginx}: Successfully pulled image "nginx:alpine" in 4.989s (4.989s including waiting). Image size: 28826677 bytes.
   Normal  Created    20s   kubelet            spec.containers{nginx}: Container created
   Normal  Started    20s   kubelet            spec.containers{nginx}: Container started
+
+
+
+kubectl scale deployment web-aula5 --replicas=3
+
+kubectl get pods -o wide
+deployment.apps/web-aula5 scaled
+NAME                         READY   STATUS    RESTARTS   AGE   IP            NODE     NOMINATED NODE   READINESS GATES
+web-aula5-779c6f9566-chlhl   1/1     Running   0          46s   192.168.1.7   node01   <none>           <none>
+web-aula5-779c6f9566-gdg9k   0/1     Pending   0          0s    <none>        <none>   <none>           <none>
