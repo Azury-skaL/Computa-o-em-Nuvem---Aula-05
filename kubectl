@@ -6,3 +6,11 @@ Kustomize Version: v5.8.1
 NAME           STATUS   ROLES           AGE   VERSION
 controlplane   Ready    control-plane   9d    v1.37.1
 node01         Ready    <none>          9d    v1.37.1
+
+
+kubectl create deployment web-aula5 --image=nginx:alpine
+
+kubectl get deployments
+deployment.apps/web-aula5 created
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+web-aula5   0/1     0            0           0s
