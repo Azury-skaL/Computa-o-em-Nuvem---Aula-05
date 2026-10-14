@@ -121,3 +121,12 @@ NAME                         READY   STATUS    RESTARTS   AGE
 web-aula5-779c6f9566-gdg9k   1/1     Running   0          27s
 web-aula5-779c6f9566-hlb7x   1/1     Running   0          27s
 web-aula5-779c6f9566-z6wnl   1/1     Running   0          2s
+
+
+
+kubectl expose deployment web-aula5 --port=80 --target-port=80 --name=web-service
+
+kubectl get service web-service
+service/web-service exposed
+NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+web-service   ClusterIP   10.108.99.239   <none>        80/TCP    0s
