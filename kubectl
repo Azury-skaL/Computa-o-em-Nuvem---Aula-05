@@ -90,3 +90,18 @@ deployment.apps/web-aula5 scaled
 NAME                         READY   STATUS    RESTARTS   AGE   IP            NODE     NOMINATED NODE   READINESS GATES
 web-aula5-779c6f9566-chlhl   1/1     Running   0          46s   192.168.1.7   node01   <none>           <none>
 web-aula5-779c6f9566-gdg9k   0/1     Pending   0          0s    <none>        <none>   <none>           <none>
+
+
+
+
+kubectl get deployment,replicaset,pods
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/web-aula5   3/3     3            3           59s
+
+NAME                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/web-aula5-779c6f9566   3         3         3       59s
+
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/web-aula5-779c6f9566-chlhl   1/1     Running   0          59s
+pod/web-aula5-779c6f9566-gdg9k   1/1     Running   0          13s
+pod/web-aula5-779c6f9566-hlb7x   1/1     Running   0          13s
